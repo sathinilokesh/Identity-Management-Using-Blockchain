@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Management</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Identity Management</h1>
+        <div class="form-container">
+            <h2>Register Identity</h2>
+            <form id="registerForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required><br>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h2>Get Identity</h2>
+            <form id="getIdentityForm">
+                <label for="address">Ethereum Address:</label>
+                <input type="text" id="address" name="address" required><br>
+                <button type="submit">Get Identity</button>
+            </form>
+        </div>
+
+        <div id="identityInfo"></div>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, phone })
+            });
+            const data = await response.json();
+            alert(data.status);
+        });
+
+        document.getElementById('getIdentityForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const address = document.getElementById('address').value;
+            const response = await fetch(`/identity/${address}`);
+            const data = await response.json();
+            document.getElementById('identityInfo').innerText = `Name: ${data.name}, Email: ${data.email}, Phone: ${data.phone}`;
+        });
+    </script>
+</body>
+</html>

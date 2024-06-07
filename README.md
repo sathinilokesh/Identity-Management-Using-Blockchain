@@ -23,7 +23,60 @@ The Identity Management System is a Flask web application that allows users to r
     pip install flask web3
     ```
 
-3. Make sure Ganache is running locally.
+## Steps to run project
+
+### Step-by-Step Guide Using Hardhat
+
+#### 1. Set Up the Environment
+1. **Install Node.js and npm**:
+    - Download and install from [Node.js official site](https://nodejs.org/).
+
+2. **Install Ganache**:
+    - Download and install from [Truffle's official site](https://www.trufflesuite.com/ganache).
+
+3. **Install Python and pip**:
+    - Download and install from [Python's official site](https://www.python.org/).
+
+4. **Install Flask**:
+    ```bash
+    pip install Flask
+    ```
+
+5. **Install Web3.py**:
+    ```bash
+    pip install web3
+    ```
+
+6. **Install Hardhat**:
+    ```bash
+    npm install --save-dev hardhat
+    ```
+
+2. **Initialize a Hardhat project**:
+    ```bash
+    npx hardhat
+    ```
+    Follow the prompts to create a basic sample project.
+
+3. **Install Hardhat dependencies**:
+    ```bash
+    npm install --save-dev @nomiclabs/hardhat-ethers ethers
+    ```
+    
+#### 4. Compile and Deploy the Contract
+
+1. **Compile the contract**:
+    ```bash
+    npx hardhat compile
+    ```
+
+2. **Run Ganache**:
+    - Start Ganache to have a local blockchain running.
+
+
+
+2. **Copy `Identity.json` from `artifacts/contracts` ** to store the ABI and contract address (generated after deployment). Paste this file in the root directory:
+
 
 ## Usage
 
@@ -52,5 +105,3 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-Feel free to adjust the README according to your specific requirements or additional details you want to include.

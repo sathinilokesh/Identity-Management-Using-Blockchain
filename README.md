@@ -37,28 +37,18 @@ The Identity Management System is a Flask web application that allows users to r
 3. **Install Python and pip**:
     - Download and install from [Python's official site](https://www.python.org/).
 
-4. **Install Flask**:
-    ```bash
-    pip install Flask
-    ```
-
-5. **Install Web3.py**:
-    ```bash
-    pip install web3
-    ```
-
-6. **Install Hardhat**:
+4. **Install Hardhat**:
     ```bash
     npm install --save-dev hardhat
     ```
 
-2. **Initialize a Hardhat project**:
+5. **Initialize a Hardhat project**:
     ```bash
     npx hardhat
     ```
     Follow the prompts to create a basic sample project.
 
-3. **Install Hardhat dependencies**:
+6. **Install Hardhat dependencies**:
     ```bash
     npm install --save-dev @nomiclabs/hardhat-ethers ethers
     ```

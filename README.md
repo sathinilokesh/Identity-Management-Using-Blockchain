@@ -14,7 +14,7 @@ The Identity Management System is a Flask web application that allows users to r
 1. Clone the repository:
 
     ```
-    git clone https://github.com/your-username/identity-management-system.git
+    git clone https://github.com/sathinilokesh/Identity-Management-Using-Blockchain.git
     ```
 
 2. Install dependencies:
